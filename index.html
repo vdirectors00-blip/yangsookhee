@@ -191,8 +191,8 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;background:rgba(250,247,242,
 .cs-card:hover img{transform:scale(1.04)}
 .cs-cap{position:absolute;bottom:0;left:0;right:0;padding:12px 16px;background:linear-gradient(transparent,rgba(0,0,0,.6));color:#fff;font-size:14px;font-weight:500;letter-spacing:-0.01em}
 /* ─── ACTS MORE ─── */
-.act-hidden{display:none}
-.acts.expanded .act-hidden{display:grid}
+.act-hidden{display:none;opacity:0;transform:translateY(20px)}
+.acts.expanded .act-hidden{display:grid;animation:gFadeIn .4s ease forwards}
 .acts-more-btn{display:flex;align-items:center;justify-content:center;gap:8px;width:100%;padding:18px;margin-top:32px;background:none;color:var(--accent);border:2px solid var(--accent);border-radius:50px;font-size:16px;font-weight:600;cursor:pointer;transition:all .3s ease;letter-spacing:0.02em}
 .acts-more-btn:hover{background:var(--accent);color:#fff;transform:translateY(-2px);box-shadow:0 4px 16px rgba(0,0,0,.1)}
 .acts-more-arrow{font-size:12px;transition:transform .3s ease}
@@ -206,8 +206,9 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;background:rgba(250,247,242,
 .g-item img{width:100%;height:100%;object-fit:cover;object-position:center;transition:transform .6s ease;display:block}
 .g-item:hover img{transform:scale(1.04)}
 /* ─── GALLERY MORE ─── */
-.g-hidden{display:none}
-.g-grid.expanded .g-hidden{display:block}
+.g-hidden{display:none;opacity:0;transform:translateY(20px)}
+.g-grid.expanded .g-hidden{display:block;animation:gFadeIn .4s ease forwards}
+@keyframes gFadeIn{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
 .g-more-btn{grid-column:1/-1;width:100%;display:flex;align-items:center;justify-content:center;gap:8px;padding:16px 40px;margin:8px auto 0;background:var(--accent);color:#fff;border:none;border-radius:50px;font-size:17px;font-weight:600;cursor:pointer;transition:all .3s ease;letter-spacing:0.02em}
 .g-more-btn:hover{background:var(--accent-dark);transform:translateY(-2px);box-shadow:0 4px 16px rgba(0,0,0,.15)}
 .g-more-arrow{font-size:13px;transition:transform .3s ease}
@@ -660,7 +661,7 @@ footer p{font-size:14px;color:rgba(255,255,255,.75);line-height:1.9;letter-spaci
       <div class="ct-card"><span class="cc-lbl">선거사무실</span><span class="cc-val">만천리 844-22</span></div>
     </div>
     <div class="ct-btns">
-      <a href="https://council.gangwon.kr/member/11015/main.do" target="_blank" rel="noopener" class="fb-btn council-btn" aria-label="강원특별자치도의회 양숙희 의원 공식 페이지"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18M5 21V7l7-4 7 4v14M9 21v-6h6v6"/><rect x="9" y="9" width="2" height="2"/><rect x="13" y="9" width="2" height="2"/></svg>강원특별자치도의회 양숙희 의원 공식</a>
+      <a href="https://council.gangwon.kr/member/11015/profile.do" target="_blank" rel="noopener" class="fb-btn council-btn" aria-label="강원특별자치도의회 양숙희 의원 공식 페이지"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18M5 21V7l7-4 7 4v14M9 21v-6h6v6"/><rect x="9" y="9" width="2" height="2"/><rect x="13" y="9" width="2" height="2"/></svg>강원특별자치도의회 양숙희 의원 공식</a>
       <a href="https://www.facebook.com/yangsughui.155621" target="_blank" rel="noopener" class="fb-btn" aria-label="양숙희 후보 페이스북 방문"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>페이스북에서 만나요</a>
       </div>
     <p class="ct-area">강원특별자치도의회의원선거 · 춘천시 제6선거구 · 국민의힘</p>
@@ -669,7 +670,7 @@ footer p{font-size:14px;color:rgba(255,255,255,.75);line-height:1.9;letter-spaci
 
 <footer>
   <p>기호 2번 국민의힘 양숙희 · 강원도의회의원선거 춘천시 제6선거구 (신북읍·동면·북산면)</p>
-  <p>선거사무소 010-9197-0964 · <a href="https://www.facebook.com/yangsughui.155621" target="_blank" rel="noopener" style="color:inherit;text-decoration:underline">Facebook</a> · <a href="https://council.gangwon.kr/member/11015/main.do" target="_blank" rel="noopener" style="color:inherit;text-decoration:underline">도의회 공식</a></p>
+  <p>선거사무소 010-9197-0964 · <a href="https://www.facebook.com/yangsughui.155621" target="_blank" rel="noopener" style="color:inherit;text-decoration:underline">Facebook</a> · <a href="https://council.gangwon.kr/member/11015/profile.do" target="_blank" rel="noopener" style="color:inherit;text-decoration:underline">도의회 공식</a></p>
 </footer>
 
 <!-- Fixed CTA (모바일) -->
