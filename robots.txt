@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://vdirectors00-blip.github.io/yangsookhee/sitemap.xml
