@@ -202,18 +202,19 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;background:rgba(250,247,242,
 .acts-more-arrow{font-size:12px;transition:transform .3s ease}
 .acts.expanded .acts-more-arrow{transform:rotate(180deg)}
 
-/* ─── GALLERY ─── */
+/* ─── GALLERY (Masonry) ─── */
 #gallery{background:var(--bg)}
-.g-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;grid-auto-flow:dense}
-.g-item{overflow:hidden;position:relative;aspect-ratio:4/3;filter:grayscale(.1) contrast(1.02);border-radius:6px;background:#1a1a1a}
-.g-item:nth-child(6n+1){grid-column:span 2;grid-row:span 2}
-.g-item img{width:100%;height:100%;object-fit:contain;object-position:center;transition:transform .6s ease;display:block}
-.g-item:hover img{transform:scale(1.04)}
+.g-grid{columns:3;column-gap:14px}
+.g-item{break-inside:avoid;margin-bottom:14px;overflow:hidden;border-radius:8px;filter:grayscale(.08) contrast(1.02);box-shadow:0 2px 12px rgba(0,0,0,.06);transition:box-shadow .3s ease;display:block}
+.g-item:hover{box-shadow:0 6px 24px rgba(0,0,0,.12)}
+.g-item img{width:100%;height:auto;display:block;transition:transform .6s ease}
+.g-item:hover img{transform:scale(1.03)}
 /* ─── GALLERY MORE ─── */
-.g-hidden{display:none;opacity:0;transform:translateY(20px)}
+.g-hidden{display:none}
 .g-grid.expanded .g-hidden{display:block;animation:gFadeIn .4s ease forwards}
 @keyframes gFadeIn{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
-.g-more-btn{grid-column:1/-1;width:100%;display:flex;align-items:center;justify-content:center;gap:8px;padding:16px 40px;margin:8px auto 0;background:var(--accent);color:#fff;border:none;border-radius:50px;font-size:17px;font-weight:600;cursor:pointer;transition:all .3s ease;letter-spacing:0.02em}
+.g-more-wrap{margin-top:32px;text-align:center}
+.g-more-btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:16px 48px;background:var(--accent);color:#fff;border:none;border-radius:50px;font-size:17px;font-weight:600;cursor:pointer;transition:all .3s ease;letter-spacing:0.02em}
 .g-more-btn:hover{background:var(--accent-dark);transform:translateY(-2px);box-shadow:0 4px 16px rgba(0,0,0,.15)}
 .g-more-arrow{font-size:13px;transition:transform .3s ease}
 .g-grid.expanded .g-more-arrow{transform:rotate(180deg)}
@@ -311,17 +312,16 @@ footer p{font-size:14px;color:rgba(255,255,255,.75);line-height:1.9;letter-spaci
 
 /* Gallery & Career responsive */
 @media(max-width:960px){
-  .g-grid{grid-template-columns:repeat(2,1fr)}
-  .g-item:nth-child(6n+1){grid-column:span 2;grid-row:span 1}
+  .g-grid{columns:2;column-gap:12px}
+  .g-item{margin-bottom:12px}
   .cs-card{flex:0 0 260px}
   @keyframes csFlow{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
 }
 
 
 @media(max-width:480px){
-  .g-grid{grid-template-columns:1fr}
-  .g-item:nth-child(6n+1){grid-column:span 1;grid-row:span 1}
-  .g-item{aspect-ratio:4/3}
+  .g-grid{columns:2;column-gap:8px}
+  .g-item{margin-bottom:8px;border-radius:6px}
   .cs-card{flex:0 0 220px}
   .career-slide{margin:32px -20px}
 }
@@ -668,6 +668,8 @@ footer p{font-size:14px;color:rgba(255,255,255,.75);line-height:1.9;letter-spaci
       <div class="g-item g-hidden"><img src="images/new22.jpg" alt="양숙희 현장활동" loading="lazy"/></div>
       <div class="g-item g-hidden"><img src="images/new23.jpg" alt="양숙희 현장활동" loading="lazy"/></div>
       <div class="g-item g-hidden"><img src="images/new24.jpg" alt="양숙희 현장활동" loading="lazy"/></div>
+    </div>
+    <div class="g-more-wrap">
       <button class="g-more-btn" onclick="toggleGallery(this)">더보기 <span class="g-more-arrow">▼</span></button>
     </div>
   </div>
@@ -758,7 +760,7 @@ function toggleActs(btn){
   }
 }
 function toggleGallery(btn){
-  const grid=btn.closest('.g-grid');
+  const grid=document.querySelector('#gallery .g-grid');
   const expanded=grid.classList.toggle('expanded');
   btn.firstChild.textContent=expanded?'접기 ':'더보기 ';
   if(!expanded){
