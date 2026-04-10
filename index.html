@@ -205,9 +205,9 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;background:rgba(250,247,242,
 /* ─── GALLERY ─── */
 #gallery{background:var(--bg)}
 .g-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;grid-auto-flow:dense}
-.g-item{overflow:hidden;position:relative;aspect-ratio:4/3;filter:grayscale(.1) contrast(1.02);border-radius:6px}
+.g-item{overflow:hidden;position:relative;aspect-ratio:4/3;filter:grayscale(.1) contrast(1.02);border-radius:6px;background:#1a1a1a}
 .g-item:nth-child(6n+1){grid-column:span 2;grid-row:span 2}
-.g-item img{width:100%;height:100%;object-fit:cover;object-position:center;transition:transform .6s ease;display:block}
+.g-item img{width:100%;height:100%;object-fit:contain;object-position:center;transition:transform .6s ease;display:block}
 .g-item:hover img{transform:scale(1.04)}
 /* ─── GALLERY MORE ─── */
 .g-hidden{display:none;opacity:0;transform:translateY(20px)}
