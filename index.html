@@ -292,6 +292,14 @@ footer p{font-size:14px;color:rgba(255,255,255,.75);line-height:1.9;letter-spaci
   .msg-grid{grid-template-columns:220px 1fr;gap:48px}
   .msg-photo-box{max-width:none}
 }
+/* Gallery & Career responsive */
+@media(max-width:960px){
+  .g-grid{columns:2;column-gap:12px}
+  .g-item{margin-bottom:12px}
+  .cs-card{flex:0 0 260px}
+  @keyframes csFlow{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
+}
+
 @media(max-width:480px){
   body{font-size:20px;padding-bottom:68px}
   .sec,#career,#contact{padding:64px 20px}
@@ -302,25 +310,11 @@ footer p{font-size:14px;color:rgba(255,255,255,.75);line-height:1.9;letter-spaci
   .msg-q{font-size:24px}
   .hero-district span{font-size:clamp(22px,6vw,32px);padding:6px 16px}
   .cc-val{font-size:19px;overflow-wrap:break-word}
-
   .ct-btns{flex-direction:column}
   .council-btn,.fb-btn{min-width:auto}
   .nav-district{font-size:13px}
-
   .p-num{font-size:40px}
   .cta-bar{font-size:18px;height:64px}
-}
-
-/* Gallery & Career responsive */
-@media(max-width:960px){
-  .g-grid{columns:2;column-gap:12px}
-  .g-item{margin-bottom:12px}
-  .cs-card{flex:0 0 260px}
-  @keyframes csFlow{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
-}
-
-
-@media(max-width:480px){
   .g-grid{columns:2;column-gap:8px}
   .g-item{margin-bottom:8px;border-radius:6px}
   .cs-card{flex:0 0 220px}
@@ -757,7 +751,8 @@ function toggleActs(btn){
   const expanded=acts.classList.toggle('expanded');
   btn.firstChild.textContent=expanded?'접기 ':'의정활동 더보기 ';
   if(!expanded){
-    acts.scrollIntoView({behavior:'smooth',block:'start'});
+    const y=acts.getBoundingClientRect().top+window.pageYOffset-100;
+    window.scrollTo({top:y,behavior:'smooth'});
   }
 }
 // 갤러리 이미지 로드 완료 시 페이드인
@@ -771,7 +766,9 @@ function toggleGallery(btn){
   btn.classList.toggle('expanded',expanded);
   btn.firstChild.textContent=expanded?'접기 ':'더보기 ';
   if(!expanded){
-    document.getElementById('gallery').scrollIntoView({behavior:'smooth',block:'start'});
+    const g=document.getElementById('gallery');
+    const y=g.getBoundingClientRect().top+window.pageYOffset-100;
+    window.scrollTo({top:y,behavior:'smooth'});
   }
 }
 </script>
