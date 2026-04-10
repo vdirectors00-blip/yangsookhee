@@ -205,9 +205,10 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;background:rgba(250,247,242,
 /* ─── GALLERY (Masonry) ─── */
 #gallery{background:var(--bg)}
 .g-grid{columns:3;column-gap:14px}
-.g-item{break-inside:avoid;margin-bottom:14px;overflow:hidden;border-radius:8px;filter:grayscale(.08) contrast(1.02);box-shadow:0 2px 12px rgba(0,0,0,.06);transition:box-shadow .3s ease;display:block}
+.g-item{break-inside:avoid;margin-bottom:14px;overflow:hidden;border-radius:8px;filter:grayscale(.08) contrast(1.02);box-shadow:0 2px 12px rgba(0,0,0,.06);transition:box-shadow .3s ease;display:block;background:linear-gradient(135deg,#f0ebe3 0%,#e8e2d8 100%)}
 .g-item:hover{box-shadow:0 6px 24px rgba(0,0,0,.12)}
-.g-item img{width:100%;height:auto;display:block;transition:transform .6s ease}
+.g-item img{width:100%;height:auto;display:block;transition:transform .6s ease,opacity .5s ease;opacity:0}
+.g-item img.loaded{opacity:1}
 .g-item:hover img{transform:scale(1.03)}
 /* ─── GALLERY MORE ─── */
 .g-hidden{display:none}
@@ -640,34 +641,34 @@ footer p{font-size:14px;color:rgba(255,255,255,.75);line-height:1.9;letter-spaci
       <h2 class="sec-ko">현장에서 답을 찾겠습니다</h2>
     </div>
     <div class="g-grid">
-      <div class="g-item"><img src="images/gallery26.jpg" alt="신북 파크골프장 착공식" loading="lazy"/></div>
-      <div class="g-item"><img src="images/gallery27.jpg" alt="소양강댐 피해지원 연구회 간담회" loading="lazy"/></div>
-      <div class="g-item"><img src="images/gallery28.jpg" alt="후계농업경영인 춘천시연합회 한마음행사" loading="lazy"/></div>
-      <div class="g-item"><img src="images/gallery29.jpg" alt="보건환경연구원 신축 연구동 개소식" loading="lazy"/></div>
-      <div class="g-item g-hidden"><img src="images/new01.jpg" alt="양숙희 현장활동" loading="lazy"/></div>
-      <div class="g-item g-hidden"><img src="images/new02.jpg" alt="양숙희 현장활동" loading="lazy"/></div>
-      <div class="g-item g-hidden"><img src="images/new03.jpg" alt="양숙희 현장활동" loading="lazy"/></div>
-      <div class="g-item g-hidden"><img src="images/new04.jpg" alt="양숙희 현장활동" loading="lazy"/></div>
-      <div class="g-item g-hidden"><img src="images/new05.jpg" alt="양숙희 현장활동" loading="lazy"/></div>
-      <div class="g-item g-hidden"><img src="images/new06.jpg" alt="양숙희 현장활동" loading="lazy"/></div>
-      <div class="g-item g-hidden"><img src="images/new07.jpg" alt="양숙희 현장활동" loading="lazy"/></div>
-      <div class="g-item g-hidden"><img src="images/new08.jpg" alt="양숙희 현장활동" loading="lazy"/></div>
-      <div class="g-item g-hidden"><img src="images/new09.jpg" alt="양숙희 현장활동" loading="lazy"/></div>
-      <div class="g-item g-hidden"><img src="images/new10.jpg" alt="양숙희 현장활동" loading="lazy"/></div>
-      <div class="g-item g-hidden"><img src="images/new11.jpg" alt="양숙희 현장활동" loading="lazy"/></div>
-      <div class="g-item g-hidden"><img src="images/new12.jpg" alt="양숙희 현장활동" loading="lazy"/></div>
-      <div class="g-item g-hidden"><img src="images/new13.jpg" alt="양숙희 현장활동" loading="lazy"/></div>
-      <div class="g-item g-hidden"><img src="images/new14.jpg" alt="양숙희 현장활동" loading="lazy"/></div>
-      <div class="g-item g-hidden"><img src="images/new15.jpg" alt="양숙희 현장활동" loading="lazy"/></div>
-      <div class="g-item g-hidden"><img src="images/new16.jpg" alt="양숙희 현장활동" loading="lazy"/></div>
-      <div class="g-item g-hidden"><img src="images/new17.jpg" alt="양숙희 현장활동" loading="lazy"/></div>
-      <div class="g-item g-hidden"><img src="images/new18.jpg" alt="양숙희 현장활동" loading="lazy"/></div>
-      <div class="g-item g-hidden"><img src="images/new19.jpg" alt="양숙희 현장활동" loading="lazy"/></div>
-      <div class="g-item g-hidden"><img src="images/new20.jpg" alt="양숙희 현장활동" loading="lazy"/></div>
-      <div class="g-item g-hidden"><img src="images/new21.jpg" alt="양숙희 현장활동" loading="lazy"/></div>
-      <div class="g-item g-hidden"><img src="images/new22.jpg" alt="양숙희 현장활동" loading="lazy"/></div>
-      <div class="g-item g-hidden"><img src="images/new23.jpg" alt="양숙희 현장활동" loading="lazy"/></div>
-      <div class="g-item g-hidden"><img src="images/new24.jpg" alt="양숙희 현장활동" loading="lazy"/></div>
+      <div class="g-item"><img src="images/gallery26.jpg" alt="신북 파크골프장 착공식" loading="lazy" width="2400" height="1600"/></div>
+      <div class="g-item"><img src="images/gallery27.jpg" alt="소양강댐 피해지원 연구회 간담회" loading="lazy" width="2400" height="1371"/></div>
+      <div class="g-item"><img src="images/gallery28.jpg" alt="후계농업경영인 춘천시연합회 한마음행사" loading="lazy" width="2400" height="1596"/></div>
+      <div class="g-item"><img src="images/gallery29.jpg" alt="보건환경연구원 신축 연구동 개소식" loading="lazy" width="2400" height="1600"/></div>
+      <div class="g-item g-hidden"><img src="images/new01.jpg" alt="양숙희 현장활동" loading="lazy" width="4000" height="1848"/></div>
+      <div class="g-item g-hidden"><img src="images/new02.jpg" alt="양숙희 현장활동" loading="lazy" width="4000" height="1848"/></div>
+      <div class="g-item g-hidden"><img src="images/new03.jpg" alt="양숙희 현장활동" loading="lazy" width="1358" height="2196"/></div>
+      <div class="g-item g-hidden"><img src="images/new04.jpg" alt="양숙희 현장활동" loading="lazy" width="1582" height="3002"/></div>
+      <div class="g-item g-hidden"><img src="images/new05.jpg" alt="양숙희 현장활동" loading="lazy" width="1817" height="1973"/></div>
+      <div class="g-item g-hidden"><img src="images/new06.jpg" alt="양숙희 현장활동" loading="lazy" width="4000" height="1848"/></div>
+      <div class="g-item g-hidden"><img src="images/new07.jpg" alt="양숙희 현장활동" loading="lazy" width="1045" height="712"/></div>
+      <div class="g-item g-hidden"><img src="images/new08.jpg" alt="양숙희 현장활동" loading="lazy" width="2550" height="2574"/></div>
+      <div class="g-item g-hidden"><img src="images/new09.jpg" alt="양숙희 현장활동" loading="lazy" width="1608" height="2010"/></div>
+      <div class="g-item g-hidden"><img src="images/new10.jpg" alt="양숙희 현장활동" loading="lazy" width="2400" height="1600"/></div>
+      <div class="g-item g-hidden"><img src="images/new11.jpg" alt="양숙희 현장활동" loading="lazy" width="4000" height="2486"/></div>
+      <div class="g-item g-hidden"><img src="images/new12.jpg" alt="양숙희 현장활동" loading="lazy" width="1080" height="1458"/></div>
+      <div class="g-item g-hidden"><img src="images/new13.jpg" alt="양숙희 현장활동" loading="lazy" width="655" height="603"/></div>
+      <div class="g-item g-hidden"><img src="images/new14.jpg" alt="양숙희 현장활동" loading="lazy" width="1080" height="724"/></div>
+      <div class="g-item g-hidden"><img src="images/new15.jpg" alt="양숙희 현장활동" loading="lazy" width="2400" height="1600"/></div>
+      <div class="g-item g-hidden"><img src="images/new16.jpg" alt="양숙희 현장활동" loading="lazy" width="1080" height="2640"/></div>
+      <div class="g-item g-hidden"><img src="images/new17.jpg" alt="양숙희 현장활동" loading="lazy" width="4000" height="3000"/></div>
+      <div class="g-item g-hidden"><img src="images/new18.jpg" alt="양숙희 현장활동" loading="lazy" width="1035" height="1112"/></div>
+      <div class="g-item g-hidden"><img src="images/new19.jpg" alt="양숙희 현장활동" loading="lazy" width="1788" height="2462"/></div>
+      <div class="g-item g-hidden"><img src="images/new20.jpg" alt="양숙희 현장활동" loading="lazy" width="1080" height="1706"/></div>
+      <div class="g-item g-hidden"><img src="images/new21.jpg" alt="양숙희 현장활동" loading="lazy" width="2400" height="1600"/></div>
+      <div class="g-item g-hidden"><img src="images/new22.jpg" alt="양숙희 현장활동" loading="lazy" width="1080" height="609"/></div>
+      <div class="g-item g-hidden"><img src="images/new23.jpg" alt="양숙희 현장활동" loading="lazy" width="2338" height="2432"/></div>
+      <div class="g-item g-hidden"><img src="images/new24.jpg" alt="양숙희 현장활동" loading="lazy" width="1080" height="1585"/></div>
     </div>
     <div class="g-more-wrap">
       <button class="g-more-btn" onclick="toggleGallery(this)">더보기 <span class="g-more-arrow">▼</span></button>
@@ -759,6 +760,11 @@ function toggleActs(btn){
     acts.scrollIntoView({behavior:'smooth',block:'start'});
   }
 }
+// 갤러리 이미지 로드 완료 시 페이드인
+document.querySelectorAll('#gallery .g-item img').forEach(img=>{
+  if(img.complete&&img.naturalHeight!==0){img.classList.add('loaded')}
+  else{img.addEventListener('load',()=>img.classList.add('loaded'),{once:true})}
+});
 function toggleGallery(btn){
   const grid=document.querySelector('#gallery .g-grid');
   const expanded=grid.classList.toggle('expanded');
